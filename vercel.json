@@ -1,0 +1,12 @@
+{
+  "functions": { "api/tryon.js": { "maxDuration": 60 } },
+  "headers": [
+    {
+      "source": "/loader.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=300" }
+      ]
+    }
+  ]
+}
