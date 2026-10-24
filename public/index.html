@@ -7,6 +7,11 @@
 <style>
 :root{--ink:#1c1b19;--mut:#76716a;--paper:#fbfaf7;--line:#e5e1d8;--soft:#f1eee7;--ac:#0f766e;--on:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
+     #app{height:100%}
+   body.top{margin:20px}
+   body.top #app{height:auto}
+   body.top #fab{width:180px;height:60px}
+   body.top #panel{width:400px;height:640px}          
 html,body{height:100%;background:transparent;font:14px/1.4 "Avenir Next",Avenir,"Segoe UI",system-ui,sans-serif;color:var(--ink)}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 button:focus-visible,input:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
@@ -56,6 +61,7 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
 <div id="app"></div>
 <script>
 const q = new URLSearchParams(location.search);
+     if (parent === window) document.body.classList.add("top");          
 if (/^#[0-9a-f]{6}$/i.test(q.get("accent") || "")) document.documentElement.style.setProperty("--ac", q.get("accent"));
 
 const MODELS = { female: "models/female.jpg", male: "models/male.jpg" };
